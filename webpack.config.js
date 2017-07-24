@@ -3,7 +3,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var HtmlWebpackPugPlugin = require('html-webpack-pug-plugin');
 
 module.exports = {
-  entry: ['./frames.js', './main.sass'],
+  entry: ['./display.js', './main.sass'],
   context: __dirname + "/app",
   output: {
     path: __dirname + "/dist",

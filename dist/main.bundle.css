@@ -1,3 +1,9 @@
+.hidden {
+  display: none; }
+
+body {
+  background: ghostwhite; }
+
 h1 {
   color: #343434;
   text-shadow: -1px 1px #676767;
@@ -25,3 +31,32 @@ hr {
     list-style: none; }
     #right_box ol li:not(:first-of-type) {
       margin-top: 20px; }
+
+#menagerie:not(.hidden) {
+  display: flex;
+  list-style: none; }
+  #menagerie:not(.hidden) > li {
+    margin-left: 30px;
+    max-width: 30%;
+    text-align: center;
+    padding: 5px; }
+  #menagerie:not(.hidden) ul {
+    text-align: left; }
+    #menagerie:not(.hidden) ul li {
+      margin-top: 10px;
+      margin-bottom: 15px; }
+
+li.focused {
+  background: ivory;
+  border: 1px solid beige;
+  border-radius: 10px;
+  box-shadow: 3px 3px rgba(10, 10, 10, 0.2); }
+
+span.underline {
+  text-decoration: underline; }
+
+p {
+  font-size: 20px; }
+
+.content_box {
+  padding: 10%; }

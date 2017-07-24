@@ -3,16 +3,43 @@ html
   head
     link(rel='stylesheet', href='main.bundle.css')
     title Unity of Moral Attitudes
-    script(src='bundle.js')
   body
     h1 Unity of Moral Attitudes
     div.row
       div#video_container
         video#video_element(autoplay="true")
       div#right_box
-        h2 Outline of Issues
-        ol
+        h2#outline_tag Outline of Issues
+        ol#top_list
           li.problem The Problem of the Menagerie of Moral Attitudes
           li.solution A Recipe Semantics Solution
           li.evolutionary_story An Evolutionary Account of the Structure of Moral Attitudes
-    hr
+        section#what_is_noncognitivism.hidden
+          p#noncog_def
+            strong Noncognitivism 
+            | - Moral judgements count as *moral* judgments because of their noncogntive properties.
+          p#noncog_example.hidden
+            strong Example: 
+            | To judge that it is wrong to kill is to desire that people not kill, that people be blamed for killing, etc.
+    div.row
+      ul#menagerie.hidden
+        li#logical
+          span.underline Logical
+          ul
+            li It is not wrong to collect trophies of extinct species.
+            li Human beings either have a special moral status or we should not be testing cosmetics on animals.
+            li Everything you did today was worse than the thing you did before it.
+        li#attitudinal.hidden
+          span.underline Attitudinal
+          ul
+            li Supposing that it is wrong not to make small personal sacrifices to save lives.
+            li Wondering whether it is wrong to eat animals.
+            li Wishing that it wasn't wrong to lie to your mother.
+        li#miscellaneous.hidden
+          span.underline Miscellaneous
+          ul
+            li If it had been wrong to bring children into this world, we would not have done it.
+            li Wrongs are a stain upon the moral character of decent people.
+            li You should (rationally) keep track of what you shouldn't (morally) do.
+      h1#in_common.hidden So what do all these attitudes have in common?
+  script(src='bundle.js')
