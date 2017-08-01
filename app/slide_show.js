@@ -1,115 +1,202 @@
 const R = require('ramda');
-const Frame = require('./frame.js')
 
 const FramesManager = require('./frames_manager.js');
-log = R.bind(console.log, console)
-const makeLog = R.partial.bind(null, log);
+const empty = function(){};
 
 
 const SlideShow = new FramesManager();
 
 const turn = function(color, ele){ ele.style.color = color }
-const turnRed = R.partial(turn, ['red']);
-const turnBlack = R.partial(turn, ['black']);
-const hide = function(ele){ ele.classList.add('hidden') }
-const show = function(ele){ ele.classList.remove('hidden') }
+const turnRed = R.curry(turn)('red');
+const turnBlack = R.curry(turn)('black');
+const addClass = function(cTA, ele){ ele.classList.add(cTA) }
+const removeClass = function(cTR, ele){ ele.classList.remove(cTR) }
+const hide = R.curry(addClass)('hidden');
+const show = R.curry(removeClass)('hidden');
+const invisiblize = function(ele){ ele.classList.add('invisible') }
+const visiblize = function(ele){ ele.classList.remove('invisible') }
+const focus = function(ele){ ele.classList.add('focused') }
+const unfocus = function(ele){ ele.classList.remove('focused') }
+var i = 0
+const resetI = function(){i = 0}
+const slideRight = function(ele){ 
+  ele.style.transform = `translate(-${500 * ++i}px)`;
+  }
+const sb = function(func){ return func.bind.bind(func) }
+const oneToArg = function(func) { return R.curryN(2, sb(func))(func); }
+
 const el = document.querySelector.bind(document);
 const elA = document.querySelectorAll.bind(document);
-const makeRed = R.partial.bind(null, turnRed);
-const makeBlack = R.partial.bind(null, turnBlack);
-const makeHidden = R.partial.bind(null, hide);
-const makeShown = R.partial.bind(null, show);
+const makeRed       = R.compose(oneToArg(turnRed), el);
+const makeBlack     = R.compose(oneToArg(turnBlack), el);
+const makeHidden    = R.compose(oneToArg(hide), el);
+const makeShown     = R.compose(oneToArg(show), el);
+const makeInvisible = R.compose(oneToArg(invisiblize), el);
+const makeVisible   = R.compose(oneToArg(visiblize), el);
+const makeFocused   = R.compose(oneToArg(focus), el);
+const makeUnfocused = R.compose(oneToArg(unfocus), el);
+const moveRight     = R.compose(oneToArg(slideRight), el);
 
 SlideShow.addFrame(
-  new Frame(
-    R.partial(log, "start"),
-  )
+  [empty],
+  [empty]
+);
+
+SlideShow.addFrame(
+  [makeRed('li.problem')],
+  [makeBlack('li.problem')]
+);
+
+SlideShow.addFrame(
+  [makeRed('li.solution')],
+  [makeBlack('li.solution')]
+);
+
+SlideShow.addFrame(
+  [makeRed('li.evolutionary_story')],
+  [makeBlack('li.evolutionary_story')]
+);
+
+SlideShow.addFrame(
+  [
+    makeHidden('li.solution'),
+    makeHidden('li.evolutionary_story'),
+    makeHidden('#outline_tag')
+  ],[empty]
+);
+
+SlideShow.addFrame(
+  [
+    makeShown('#what_is_noncognitivism')
+  ], [empty]
+);
+
+SlideShow.addFrame(
+  [
+    makeShown('#noncog_example')
+  ],[
+    makeHidden('#noncog_example')
+  ]
+);
+
+SlideShow.addFrame(
+  [
+    makeShown('#menagerie')
+  ],
+  [makeUnfocused('#logical')]
+);
+
+SlideShow.addFrame(
+  [makeFocused('#attitudinal'), moveRight('#menagerie')],
+  [makeUnfocused('#attitudinal')]
+);
+
+SlideShow.addFrame(
+  [makeFocused('#miscellaneous'), moveRight('#menagerie')],
+  [
+    makeHidden('li.problem'),
+    makeHidden('#menagerie'),
+    makeHidden('#what_is_noncognitivism')
+  ]
+);
+
+SlideShow.addFrame(
+  [makeShown('#main_problem')],
+  [makeHidden('#main_problem')]
 )
 
 SlideShow.addFrame(
-  new Frame( R.compose( 
-      makeLog('1'),
-      makeRed([el('li.problem')]),
-  ),
-     makeBlack([el('li.problem')])
-  )
+  [
+    makeShown('#main_problem'),
+    makeShown('li.solution'),
+    makeShown('#recipe_semantics')
+  ],
+  [empty]
 );
 
 SlideShow.addFrame(
-  new Frame(
-    R.compose(
-      makeLog('2'),
-      makeRed([el('li.solution')])
-    ),
-      makeBlack([el('li.solution')])
-  )
+  [
+    makeShown('#recipe_def')
+  ],
+  [empty]
 );
 
 SlideShow.addFrame(
-  new Frame(
-    R.compose(
-      makeLog("3"),
-      makeRed([el('li.evolutionary_story')])
-    ),
-    makeBlack([el('li.evolutionary_story')])
-  )
+  [
+    resetI,
+    makeShown('#properties')
+  ],
+  [makeUnfocused('#semantic')]
 );
 
 SlideShow.addFrame(
-  new Frame(
-    R.compose(
-      makeLog("4"),
-      makeHidden([el('li.solution')]),
-      makeHidden([el('li.evolutionary_story')]),
-      makeHidden([el('#outline_tag')])
-    )
-  )
+  [
+    makeFocused('#orthographic'),
+    moveRight('#properties')
+  ],
+  [
+    makeUnfocused('#orthographic')
+  ]
+);
+SlideShow.addFrame(
+  [
+    makeFocused('#sentences'),
+    moveRight('#properties')
+  ],
+  [empty]
 );
 
 SlideShow.addFrame(
-  new Frame(
-    R.compose(
-      makeLog("5"),
-      makeShown([el('#what_is_noncognitivism')])
-    )
-  )
+  [
+    makeHidden('#sentences_plain'),
+    makeShown('#sentences_underlined')
+  ],
+  [makeUnfocused("#sentences")]
 );
 
 SlideShow.addFrame(
-  new Frame(
-    R.compose(
-      makeLog("6"),
-      makeShown([el('#noncog_example')])
-    ),
-    makeHidden([el('#noncog_example')])
-  )
+  [
+    makeFocused('#moral_concepts'),
+    moveRight('#properties')
+  ],
+  [makeUnfocused("#moral_concepts")]
 );
 
 SlideShow.addFrame(
-  new Frame(
-    R.compose(
-      makeLog("7"),
-      makeShown([el('#menagerie')])
-    )
-  )
+  [
+    makeHidden('#properties'), 
+    makeShown('#moral_recipe'),
+    makeShown('#moral_recipe_list')
+  ],
+  [empty]
+);
+SlideShow.addFrame(
+  [
+    makeShown('#spandrel'),
+    makeHidden('#moral_recipe')
+  ],
+  [
+    makeHidden('#spandrel')
+  ]
 );
 
 SlideShow.addFrame(
-  new Frame(
-    R.compose(
-      makeLog("8"),
-      makeShown([el('#attitudinal')])
-    )
-  )
+  [
+    resetI,
+    makeShown('#spandrel_proposals'),
+    makeHidden('#moral_recipe'),
+    makeHidden('#moral_recipe_list'),
+    makeHidden('#moral_recipe_list')
+  ],
+  [makeUnfocused('#nipple_example')]
 );
 
 SlideShow.addFrame(
-  new Frame(
-    R.compose(
-      makeLog("9"),
-      makeShown([el('#miscellaneous')])
-    )
-  )
+  [
+    makeFocused('#moral_attitude_example'),
+    moveRight('#spandrel_proposals')
+  ],
+  [makeUnfocused('#moral_attitude_example')]
 );
 
 module.exports = SlideShow;
