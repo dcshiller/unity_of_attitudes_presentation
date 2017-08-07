@@ -4,6 +4,14 @@ html
     link(rel='stylesheet', href='main.bundle.css')
     title Unity of Moral Attitudes
   body
+    div.flash#problem_flash
+      h1 The Problem
+    div.flash#title_flash
+      h1 The Unity of Moral Attitudes: Recipe Semantics and Credal Exaptation
+    div.flash#solution_flash.hidden
+      h1 The Solution
+    div.flash#evolution_flash.hidden
+      h1 An Evolutionary Explanation
     h1 Unity of Moral Attitudes
     div.row
       div.column#video_column
@@ -12,101 +20,103 @@ html
       div.column#content_column
         div.row#top_row
           div#right_box
-            h2#outline_tag Outline of Issues
             section#main_problem.hidden
-              h2 What unifies all of these moral attitudes as <em>moral</em> attitudes?
-              h3#main_answer.hidden They share the same parts.
-            ol#top_list
-              li.problem The Problem of the Menagerie of Moral Attitudes
-              li.solution A Recipe Semantics Solution
-              li.evolutionary_story An Evolutionary Account of the Structure of Moral Attitudes
-            section#what_is_noncognitivism.hidden
-              p#noncog_def
-                strong Noncognitivism 
-                | - Moral judgements count as *moral* judgments because of their noncogntive properties.
-              p#noncog_example.hidden
-                strong Example: 
-                | To judge that it is wrong to kill is to desire that people not kill, that people be blamed for killing, etc.
+              h2 The Unity of <em>Moral</em> Attitudes
+            section#noncognitivism.hidden
+              h2 Noncognitivism
+            section#attitudes.hidden
+              h2 The Menagerie
+            section#ptm.hidden
+              h2 The Presentational Theory of Mind
             section#recipe_semantics.hidden
-              p#recipe_def.hidden
-                strong Recipe Semantics 
-                | - A characterization of a content in terms of its parts.
-              p#moral_recipe.hidden
-                strong Proposal: 
-              ul#moral_recipe_list.hidden
-                li Moral attitudes are attitudes constructed with moral concepts.
-                li Moral concepts are defined in terms of their use in certain contexts.
-                li In other contexts, they have no meaning-characterizing use.
-              p#spandrel.hidden
-                strong Spandrel Context: 
-                | A context in which a concept does not have a meaning-characterizing use, but which arise because of the laws of cognitive syntax.
+              h2 Recipe Semantics
+            section#evolution.hidden
+              h2 Evolution of Moral Attitudes
         div.row#bottom_row
-          ul#menagerie.slides.hidden
-            li#logical.focused.focusable
-              h3.underline Logical
-              ul.column
-                li It is not wrong to collect trophies of extinct species.
-                li Human beings either have a special moral status or we should not be testing cosmetics on animals.
-                li Everything you did today was worse than the thing you did before it.
-            li#attitudinal.focusable
-              h3.underline Attitudinal
-              ul.column
-                li Supposing that it is wrong not to make small personal sacrifices to save lives.
-                li Wondering whether it is wrong to eat animals.
-                li Wishing that it wasn't wrong to lie to your mother.
-            li#miscellaneous.focusable
-              h3.underline Other
-              ul.column
-                li If it had been wrong to bring children into this world, we would not have done it.
-                li Wrongs are a stain upon the moral character of decent people.
-                li You should (rationally) keep track of what you shouldn't (morally) do.
-          h1#in_common.hidden So what do all these attitudes have in common?
-          ul#properties.slides.hidden
-            li#semantic.focused.focusable
-              h3.underline Representational Theory of Mind
-              img(src="./representationalism.png" width="300px")
-            li#orthographic.focusable
-              h3.underline Orthographic Identities
-              img(src="./orthographic_properties.png" width="300px")
-            li#sentences.focusable
-              h3.underline.invisible Across Contexts
-              ul#sentences_plain.column
-                li ymj vznhp gwtbs ktc ozruji tajw ymj rtts.
-                li ymj qfed ktc wfs fbfd bnym ymj xutts.
-                li fsi ymnx qnyyqj ktc wfs fqq ymj bfd mtrj.
-              ul#sentences_underlined.hidden.column
-                li 
-                  | ymj vznhp gwtbs 
-                  span.underline.red ktc
-                  |  ozruji tajw ymj rtts.
-                li 
-                  | ymj qfed 
-                  span.underline.red ktc
-                  |  wfs fbfd bnym ymj xutts.
-                li
-                  | fsi ymnx qnyyqj 
-                  span.underline.red ktc
-                  |  wfs fqq ymj bfd mtrj.
-            li#moral_concepts.focusable
-              h3.underline Moral Concepts
-              ul#moral_concept.column
-                p.tcenter Distinctive orthographic form.
-                p.tcenter
-                  | Distinctive role 
-                  span.sc in some contexts.
-          ul#spandrel_proposals.slides.hidden
-            li#nipple_example.focused.focusable
-              h3.underline Nipple Analogy
-              ul.column
-                li Nipples have a functional characterization.
-                li Nipples occur in contexts in which they lack that function.
-                li They can be identified by sharing non-functional properties with other things that share them.
-                li In these contexts, they are spandrels.
-            li#moral_attitude_example.focusable
-              h3.underline Spandrel Context
-              ul.column
-                li Moral concepts have a functional characterization.
-                li Moral concept tokens occur in contexts where they lack that function.
-                li They can be identified by sharing orthographic properties with concepts that have that function.
-                li In these contexts, they are spandrels.
+            ul#menagerie.slides.hidden
+              li#logical.focused.focusable
+                h3.underline Logical
+                ul.column
+                  li It is not wrong to collect trophies of extinct species.
+                  li Human beings either have a special moral status or we should not be testing cosmetics on animals.
+                  li Everything you did today was worse than the thing you did before it.
+              li#miscellaneous.focusable
+                h3.underline Special Contexts
+                ul.column
+                  li If it had been wrong to bring children into this world, we would not have done it.
+                  li Wrongs are a stain upon the moral character of decent people.
+                  li You should (rationally) keep track of what you shouldn't (morally) do.
+              li#attitudinal.focusable
+                h3.underline Attitudinal
+                ul.column
+                  li Supposing that it is wrong not to make small personal sacrifices to save lives.
+                  li Wondering whether it is wrong to eat animals.
+                  li Wishing that it wasn't wrong to lie to your mother.
+            h1#in_common.hidden So what do all these attitudes have in common?
+            ul#properties.slides.hidden
+              li#semantic.focused.focusable
+                h3.underline Representational Theory of Mind
+                img(src="./representationalism.png" width="300px")
+              li#orthographic.focusable
+                h3.underline Orthographic Properties
+                img(src="./orthographic_properties.png" width="300px")
+              li#sentences.focusable
+                ul#sentences_plain.column.full
+                  li ymj vznhp gwtbs ktc ozruji tajw ymj rtts.
+                  li ymj qfed ktc wfs fbfd bnym ymj xutts.
+                  li fsi ymnx qnyyqj ktc wfs fqq ymj bfd mtrj.
+                ul#sentences_underlined.hidden.column.full
+                  li 
+                    | ymj vznhp gwtbs 
+                    span.underline.red ktc
+                    |  ozruji tajw ymj rtts.
+                  li 
+                    | ymj qfed 
+                    span.underline.red ktc
+                    |  wfs fbfd bnym ymj xutts.
+                  li
+                    | fsi ymnx qnyyqj 
+                    span.underline.red ktc
+                    |  wfs fqq ymj bfd mtrj.
+              li#jabberwocky.focusable
+                ul.column.full
+                  li Twas brillig, and the slithy toves
+                  li Did gyre and gimble in the wabe:
+                  li All mimsy were the borogoves, 
+                  li And the mome raths outgrabe.
+            ul#moral_recipe_semantics.slides.hidden
+              li#moral_concepts.focused.focusable
+                h2 Moral Concepts
+                ul.column
+                  li.tcenter Orthographic Unity
+                  li.tcenter AND
+                  li.tcenter Function in Context
+                  li
+              li#spandrels.focused.focusable
+                h2 Spandrels
+                img(src='./spandrel.jpg' width='200px' style="border: 1px solid black")
+              li#moral_wishes.focused.focusable
+                h2 Moral Wishes
+                h3.tcenter.center.middle.column(style="width: 80%; height: 60%")
+                  div
+                    span.terminal_ellipsis Moral concept 
+                    span.hidden.terminal_ellipsis in wish structure 
+                    span.hidden with no distinctive cognitive role.
+            ul#exaptation.slides.hidden
+              li#attitudes_sentiments.focused.focusable
+                div.column.middle
+                  h2 Moral Sentiments
+                  h2 are not
+                  h2 Moral Attitudes
+              li#recency.focusable
+                h2 Recency
+              li#exaptation_proposal.focusable
+                div.column.middle.tcenter
+                  h3 Moral judgments came from beliefs
+              li#biproducts.focusable
+                h2 Exaptation is Imperfect
+                div.column.middle.tcenter(style="height: 60%")
+                  h3.hidden
+                    span.terminal_ellipsis Physically 
+                    span.hidden and Cognitively
   script(src='bundle.js')

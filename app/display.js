@@ -8,3 +8,7 @@ document.addEventListener('DOMContentLoaded',
 )
 
 document.addEventListener('keypress', R.bind(SlideShow.nextFrame, SlideShow) );
+
+for (i = 0; i < 0; i++) {
+  SlideShow.nextFrame();
+}

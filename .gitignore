@@ -1,4 +1,4 @@
 node_modules
-.DS-store
+.DS_Store
 .sass-cache
 pug_converter.js
