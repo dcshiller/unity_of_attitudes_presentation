@@ -4,120 +4,113 @@ html
     link(rel='stylesheet', href='main.bundle.css')
     title Unity of Moral Attitudes
   body
-    div.flash#problem_flash
-      h1 The Problem
+    h1 The Unity of Moral Attitudes
+    div.flash#back_flash.hidden
     div.flash#title_flash
       h1 The Unity of Moral Attitudes: Recipe Semantics and Credal Exaptation
-    div.flash#solution_flash.hidden
-      h1 The Solution
-    div.flash#evolution_flash.hidden
-      h1 An Evolutionary Explanation
-    h1 Unity of Moral Attitudes
+    div.flash#thanks_flash.hidden
+      h1.underline Thanks to the Organizers of Minds Online
+      h4 Cameron Buckner
+      h4 Nick Byrd
+      h4 Bruce Rushing
+      h4 John Schwenkler
+    div.flash#thanks_2_flash.hidden
+      h1.underline Thanks to My Commentators
+      h4 Derek Baker
+      h4 David Faraci
+      h4 Tristram McPherson
+    br
+    br
     div.row
       div.column#video_column
         div#video_container
-          video#video_element(src="pres2.mov" autoplay)
-            source(src="pres2.mov" type="video/mov")
+          video#video_element(src="pres6.mov")
       div.column#content_column
         div.row#top_row
-          div#right_box
-            section#main_problem.hidden
-              h2 The Unity of <em>Moral</em> Attitudes
-            section#noncognitivism.hidden
-              h2 Noncognitivism
-            section#attitudes.hidden
-              h2 The Menagerie
-            section#ptm.hidden
-              h2 The Presentational Theory of Mind
-            section#recipe_semantics.hidden
-              h2 Recipe Semantics
-            section#evolution.hidden
-              h2 Evolution of Moral Attitudes
         div.row#bottom_row
-            ul#menagerie.slides.hidden
-              li#logical.focused.focusable
-                h3.underline Logical
-                ul.column
-                  li It is not wrong to collect trophies of extinct species.
-                  li Human beings either have a special moral status or we should not be testing cosmetics on animals.
-                  li Everything you did today was worse than the thing you did before it.
-              li#miscellaneous.focusable
-                h3.underline Special Contexts
-                ul.column
-                  li If it had been wrong to bring children into this world, we would not have done it.
-                  li Wrongs are a stain upon the moral character of decent people.
-                  li You should (rationally) keep track of what you shouldn't (morally) do.
-              li#attitudinal.focusable
-                h3.underline Attitudinal
-                ul.column
-                  li Supposing that it is wrong not to make small personal sacrifices to save lives.
-                  li Wondering whether it is wrong to eat animals.
-                  li Wishing that it wasn't wrong to lie to your mother.
-            h1#in_common.hidden So what do all these attitudes have in common?
-            ul#properties.slides.hidden
-              li#semantic.focused.focusable
-                h3.underline Representational Theory of Mind
-                img(src="./representationalism.png" width="300px")
-              li#orthographic.focusable
-                h3.underline Orthographic Properties
-                img(src="./orthographic_properties.png" width="300px")
-              li#sentences.focusable
-                ul#sentences_plain.column.full
-                  li ymj vznhp gwtbs ktc ozruji tajw ymj rtts.
-                  li ymj qfed ktc wfs fbfd bnym ymj xutts.
-                  li fsi ymnx qnyyqj ktc wfs fqq ymj bfd mtrj.
-                ul#sentences_underlined.hidden.column.full
-                  li 
-                    | ymj vznhp gwtbs 
-                    span.underline.red ktc
-                    |  ozruji tajw ymj rtts.
-                  li 
-                    | ymj qfed 
-                    span.underline.red ktc
-                    |  wfs fbfd bnym ymj xutts.
-                  li
-                    | fsi ymnx qnyyqj 
-                    span.underline.red ktc
-                    |  wfs fqq ymj bfd mtrj.
-              li#jabberwocky.focusable
-                ul.column.full
-                  li Twas brillig, and the slithy toves
-                  li Did gyre and gimble in the wabe:
-                  li All mimsy were the borogoves, 
-                  li And the mome raths outgrabe.
-            ul#moral_recipe_semantics.slides.hidden
-              li#moral_concepts.focused.focusable
-                h2 Moral Concepts
-                ul.column
-                  li.tcenter Orthographic Unity
-                  li.tcenter AND
-                  li.tcenter Function in Context
-                  li
-              li#spandrels.focused.focusable
-                h2 Spandrels
-                img(src='./spandrel.jpg' width='200px' style="border: 1px solid black")
-              li#moral_wishes.focused.focusable
-                h2 Moral Wishes
-                h3.tcenter.center.middle.column(style="width: 80%; height: 60%")
-                  div
-                    span.terminal_ellipsis Moral concept 
-                    span.hidden.terminal_ellipsis in wish structure 
-                    span.hidden with no distinctive cognitive role.
-            ul#exaptation.slides.hidden
-              li#attitudes_sentiments.focused.focusable
-                div.column.middle
-                  h2 Moral Sentiments
-                  h2 are not
-                  h2 Moral Attitudes
-              li#recency.focusable
-                h2 Recency
-              li#exaptation_proposal.focusable
-                div.column.middle.tcenter
-                  h3 Moral judgments came from beliefs
-              li#biproducts.focusable
-                h2 Exaptation is Imperfect
-                div.column.middle.tcenter(style="height: 60%")
-                  h3.hidden
-                    span.terminal_ellipsis Physically 
-                    span.hidden and Cognitively
+          ul.column.slides.up.hidden
+            li.focused.focusable
+              .column.space-around
+                h3.underline The Unity of Moral Attitudes: <br> Recipe Semantics and Credal Exaptation
+                h4 Derek Shiller
+            li.focusable
+              .column.space-around
+                h3.underline Noncognitivism
+                div
+                  h4 Moral judgments are not beliefs.
+                  h4 No distinctive representational contents.
+            li.focusable
+              .column.space-around
+                img(src="noncogcomp.png" width="100%")
+            li.focusable
+              .column.space-around
+                h3.underline Straightforwardly Predicative Moral Judgments
+                h4 [action type] is [moral label]
+            li.focusable
+              .column.space-around
+                h4 
+                  span It is 
+                  span.red_underline not
+                  span  wrong to collect trophies of extinct species.
+            li.focusable
+              .column.space-around
+                h4
+                  span.red_underline If it had been
+                  span  wrong to bring children into this world, we would not do it.
+            li.focusable
+              .column.space-around
+                h4
+                  span You 
+                  span.red_underline should
+                  span  keep track of what you 
+                  span.blue_underline shouldn't
+                  span  do.
+            li.focusable
+              .column.space-around
+                h4
+                  span.red_underline Uncertainty
+                  span  about right and wrong.
+            li.focusable
+              .column.space-around
+                h3 The Problem
+                h4 What do all moral attitudes have in common, if not a single motivational influence?
+            li.focusable
+              .column.space-around
+            li.focusable
+              .column.space-around
+                h3 Representational Theory of Mind
+                h4 Propositional attitudes involve cognitive representations.
+            li.focusable
+              .column.space-around
+                h3 Presentational Theory of Mind
+                h4 Minds employ non-representational structures that look just like its representations.
+            li.focusable
+              .column.space-around
+                h3 Moral Concepts
+                h4 Concepts with a certain role in the context of straightforward predicative moral judgments.
+            li.focusable
+              .column.space-around
+            li.focusable
+              .column.space-around
+                h3 Spandrels Proposal
+                h4 Moral attitudes other than judgments arose as byproducts of selection for moral judgments.
+            li.focusable
+              h3
+              .column.space-around
+                h4 Moral sentiments are old.
+                h4 Moral attitudes are young.
+            li.focusable
+              .column.space-around
+                h3 Exaptation Proposal
+                div
+                  h4 Moral judgments developed out of ordinary beliefs.
+                  h4 Other moral attitudes result from the syntactic properties of cognitive structures in common with propositional attitudes.
+            li.focusable
+              .column
+                h3 Summary
+                ol.column.space-around(style="text-align: left")
+                  li Moral attitudes include moral concepts.
+                  li Moral concepts are characterized by their role in the context of moral judgments.
+                  li The Unity of Moral Attitudes results from the implementational identity of moral concepts.
+                  li They have no particular function in other contexts, because of their origin as spandrels.
   script(src='bundle.js')

@@ -58,8 +58,10 @@ hr
   flex-grow: 2
   overflow: hidden
   width: 800px
+  max-height: 500px
 
 #video_column
+  margin-left: 100px
   width: 20%
 #video_container
   width: 400px
@@ -102,12 +104,13 @@ hr
 .slides:not(.hidden)
   display: flex
   list-style: none
-  transition: transform 1s
+  opacity: 1
+  transition: opacity 1s, transform 1s
   &>li
     margin-left: 30px
     text-align: center
     padding: 5px
-    width: 500px
+    width: 550px
     height: 300px
     &:not(.focused)
       color: grey
@@ -122,11 +125,32 @@ hr
     li
       font-size: 23px
 
+.slides.dissolved
+  opacity: 0
+  transform: opacity 1s
+
+.slides.up
+  height: 600px
+  li.focusable
+    margin-bottom: 20px
+    padding-left: 20px
+    padding-right: 20px
+    padding-top: 10px
+    &:first-of-type
+      margin-top: 100px
+    h4:last-child:not(:first-child)
+      margin-bottom: 100px
+
+.space-around
+  justify-content: space-around
+
 li.focusable
   border: 1px solid beige
   opacity: .5
   background: ivory
   box-shadow: 3px 3px rgba(10,10,10,.05)
+  height: 250px
+  max-height: 250px
   &.focused
     opacity: 1
     border: 1px solid darken(beige, 20%)
@@ -155,3 +179,9 @@ p
 
 .content_box
   padding: 10%
+
+span.red_underline
+  border-bottom: 1px solid red
+
+span.blue_underline
+  border-bottom: 1px solid blue
