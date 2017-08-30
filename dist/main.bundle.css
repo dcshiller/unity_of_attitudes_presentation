@@ -143,12 +143,12 @@ hr {
   justify-content: space-around; }
 
 li.focusable {
-  border: 1px solid beige;
-  opacity: .5;
   background: ivory;
+  border: 1px solid beige;
   box-shadow: 3px 3px rgba(10, 10, 10, 0.05);
   height: 250px;
-  max-height: 250px; }
+  max-height: 250px;
+  opacity: .4; }
   li.focusable.focused {
     opacity: 1;
     border: 1px solid #dede8d;
